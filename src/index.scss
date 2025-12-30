@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+}
+
+:root {
+  /* Font */
+  --font-primary: 'Red Hat Display', sans-serif;
+
+  /* Colors */
+  --color-cyan-600: #4D96A9;
+  --color-cyan-300: #8FE3F9;
+  --color-purple-600: #855FB1;
+  --color-purple-300: #D9B8FF;
+  --color-slate-900: #28283D;
+  --color-slate-600: #87879D;
+  --color-slate-300: #D1D1DF;
+  --color-white: #FAFAFA;
+
+  /* Spacing scale */
+  --space-50: 4px;
+  --space-100: 8px;
+  --space-200: 16px;
+  --space-300: 24px;
+  --space-400: 32px;
+  --space-500: 40px;
+  --space-700: 56px;
+  --space-800: 64px;
+  --space-900: 72px;
+  --space-1000: 80px;
+  --space-1400: 112px;
+}
