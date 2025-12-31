@@ -6,32 +6,47 @@
 
 body {
   font-family: var(--font-primary);
+  background-color: var(--color-gray-200);
 }
 
 :root {
   /* Font */
-  --font-primary: 'Red Hat Display', sans-serif;
+  --font-primary: 'Manrope', sans-serif;
 
   /* Colors */
-  --color-cyan-600: #4D96A9;
-  --color-cyan-300: #8FE3F9;
-  --color-purple-600: #855FB1;
-  --color-purple-300: #D9B8FF;
-  --color-slate-900: #28283D;
-  --color-slate-600: #87879D;
-  --color-slate-300: #D1D1DF;
-  --color-white: #FAFAFA;
+  --color-white: #FFFFFF;
+  --color-gray-900: #48556A;
+  --color-gray-500: #6E8098;
+  --color-gray-400: #9DAEC2;
+  --color-gray-200: #ECF2F8;
 
   /* Spacing scale */
-  --space-50: 4px;
-  --space-100: 8px;
+  --space-0: 0;
   --space-200: 16px;
   --space-300: 24px;
   --space-400: 32px;
   --space-500: 40px;
+  --space-600: 48px;
   --space-700: 56px;
   --space-800: 64px;
-  --space-900: 72px;
-  --space-1000: 80px;
-  --space-1400: 112px;
+  --space-1300: 104px;
+  --space-2000: 160px;
+}
+
+.text-preset-1 {
+  font-size: 20px;
+  line-height: 130%;
+  letter-spacing: 0.25em;
+}
+
+.text-preset-2 {
+  font-size: 13px;
+  line-height: 140%;
+  letter-spacing: 0.12em;
+}
+
+.text-preset-3 {
+  font-size: 13px;
+  line-height: 140%;
+  letter-spacing: 0.25em;
 }

@@ -1,11 +1,11 @@
 import './App.scss'
+import ArticlePreviewComponent from './components/ArticlePreviewComponent/ArticlePreviewComponent'
 
 function App() {
-
   return (
-    <div className="app">
-      <h1>Article Preview Component</h1>
-    </div>
+    <main className="app">
+      <ArticlePreviewComponent />
+    </main>
   )
 }
 
