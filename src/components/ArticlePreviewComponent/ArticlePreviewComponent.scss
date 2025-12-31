@@ -1,5 +1,8 @@
 .article-preview-component {
-  margin: 0 24px;
+  margin: 0 var(--space-300);
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
   .preview-image {
     width: 100%;
     height: auto;
@@ -8,11 +11,13 @@
   .title {
     font-weight: bold;
     color: var(--color-gray-900);
+    padding: var(--space-400) var(--space-400) var(--space-300);
   }
 
   .description {
     font-weight: normal;
     color: var(--color-gray-500);
+    padding: 0 var(--space-400) var(--space-400);
 
     &.bold {
       font-weight: bold;
@@ -24,18 +29,45 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 32px;
+      padding: var(--space-200) 0;
       position: relative;
+      gap: var(--space-200);
 
       .author-avatar {
-        padding-left: 32px;
+        width: var(--space-500);
+        height: var(--space-500);
+        margin-left: var(--space-400);
+        border-radius: 50%;
       }
 
       .author-details {
         flex: 1;
+        .author-name {
+          color: var(--color-gray-900);
+        }
+        .publish-date {
+          color: var(--color-gray-400);
+        }
       }
 
       .share-button-wrapper {
+        margin-right: var(--space-400);
+        width: var(--space-400);
+        height: var(--space-400);
+        background: var(--color-gray-200);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        cursor: pointer;
+        .share-button {
+          border: 0;
+          background: transparent;
+          cursor: pointer;
+          padding: 9px;
+          border-radius: 50%;
+          overflow: hidden;
+        }
         .share-tooltip {
           display: none;
         }
@@ -44,16 +76,32 @@
       .share-overlay {
         display: none;
         position: absolute;
-        background: grey;
+        background: var(--color-gray-900);
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
-        display: flex;
         justify-content: space-between;
         align-items: center;
+
+        .share-text {
+          color: var(--color-gray-400);
+          text-transform: uppercase;
+          margin-left: var(--space-400);
+          margin-right: var(--space-300);
+        }
+
+        .share-icons {
+          display: flex;
+          gap: var(--space-200);
+          flex: 1;
+          img {
+            cursor: pointer;
+          }
+        }
+
         &.show {
-          display: block;
+          display: flex;
         }
       }
     }
@@ -62,6 +110,11 @@
 
 @media (min-width: 768px) {
   .article-preview-component {
+    display: flex;
+    max-width: 600px;
+    .preview-image {
+      max-width: 235px;
+    }
     .content {
       .author-wrapper {
         .share-button-wrapper {
@@ -73,10 +126,21 @@
         }
         .share-overlay {
           &.show {
-            display: none;
+            // display: none;
           }
         }
       }
+    }
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .article-preview-component {
+    display: flex;
+    max-width: 730px;
+    .preview-image {
+      max-width: 300px;
     }
   }
 }
