@@ -9,12 +9,12 @@ import { useState } from 'react';
 
 function ArticlePreviewComponent() {
   
-  //const [showTooltip, setShowTooltip] = useState(false);
-  const [showOverlay, setShowOverlay] = useState(true);
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(false);
 
   const handleShareClick = () => {
     console.log("Share button clicked");
-    // setShowTooltip(!showTooltip);
+    setShowTooltip(!showTooltip);
     setShowOverlay(!showOverlay);
   };
 
@@ -33,11 +33,18 @@ function ArticlePreviewComponent() {
           <div className="share-button-wrapper">
             <button className="share-button" aria-label="Share Article" onClick={handleShareClick}>
               <img src={iconShare} alt="Share Icon" />
-              {/*<div className={`share-tooltip text-preset-3 ${showTooltip ? 'show' : ''}`}>Share tablet/desktop</div>*/}
             </button>
+            <div className={`share-tooltip ${showTooltip ? 'show' : ''}`}>
+              <p className="share-text text-preset-3">Share</p>
+              <div className="share-icons">
+                <img src={iconFacebook} alt="Share Icon" />
+                <img src={iconPinterest} alt="Share Icon" />
+                <img src={iconTwitter} alt="Share Icon" />
+              </div>
+            </div>
           </div>
-          <div className={`share-overlay text-preset-3 ${showOverlay ? 'show' : ''}`}>
-            <p className="share-text text-preset-2">Share</p>
+          <div className={`share-overlay ${showOverlay ? 'show' : ''}`}>
+            <p className="share-text text-preset-3">Share</p>
             <div className="share-icons">
               <img src={iconFacebook} alt="Share Icon" />
               <img src={iconPinterest} alt="Share Icon" />

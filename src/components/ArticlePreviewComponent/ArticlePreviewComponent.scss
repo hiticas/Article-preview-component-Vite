@@ -2,10 +2,10 @@
   margin: 0 var(--space-300);
   background: white;
   border-radius: 10px;
-  overflow: hidden;
   .preview-image {
     width: 100%;
     height: auto;
+    border-radius: 10px 10px 0 0;
   }
 
   .title {
@@ -59,7 +59,6 @@
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-        cursor: pointer;
         .share-button {
           border: 0;
           background: transparent;
@@ -83,6 +82,7 @@
         right: 0;
         justify-content: space-between;
         align-items: center;
+        border-radius: 0 0 10px 10px;
 
         .share-text {
           color: var(--color-gray-400);
@@ -114,19 +114,54 @@
     max-width: 600px;
     .preview-image {
       max-width: 235px;
+      border-radius: 10px 0 0 10px;
     }
     .content {
       .author-wrapper {
         .share-button-wrapper {
+          position: relative;
           .share-tooltip {
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-gray-900);
+            padding: var(--space-200) var(--space-400);
+            border-radius: 10px;
+            color: white;
+            font-size: 14px;
+
+            .share-text {
+              text-transform: uppercase;
+              color: var(--color-gray-400);
+            }
+            .share-icons {
+              display: flex;
+              gap: var(--space-200);
+              margin-left: var(--space-300);
+              img {
+                cursor: pointer;
+              }
+            }
             &.show {
-              display: block;
+              display: flex;
+            }
+
+            &::after {
+              content: '';
+              position: absolute;
+              top: 100%;
+              left: 50%;
+              transform: translateX(-50%);
+              border-left: 10px solid transparent;
+              border-right: 10px solid transparent;
+              border-top: 10px solid var(--color-gray-900);
             }
           }
         }
         .share-overlay {
           &.show {
-            // display: none;
+            display: none;
           }
         }
       }
